@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zomers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-content">
+
+      <section id="create-zomer">
+        <form id="zomer-form">
+          <label for="title">Title</label>
+          <input type="text" id="title" required>
+          <label for="year">Year of Release</label>
+          <input type="text" id="year" required>
+          <label for="coverImage">Cover Image</label>
+          <input type="text" id="coverImage" required>
+          <label for="rating">Rating</label>
+          <input type="text" id="rating" required>
+          <button type="submit" value="Add">Add</button>
+        </form>
+      </section>
+    </div>
+  </div>
+  <a href="overzicht.html"><button>Naar de overzichtspagina</button></a>
+  <section id="zomers-container"></section>
+  <script src="app.js"></script>
+</body>
+
+</html>

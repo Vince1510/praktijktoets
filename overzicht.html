@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button id="signinButton">Aanmelden</button>
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-content">
+
+      <section id="create-zomer">
+        <form id="zomer-form">
+          <h1>Aanmelden voor het grootste festival van Zeeland</h1>
+
+          <label class="input">
+            <input  id="title" required class="input__field" placeholder=" " />
+            <span class="input__label">Voor- en achternaam</span>
+          </label>
+          <br>
+
+          <label class="input">
+            <input  id="year" required class="input__field" placeholder=" " />
+            <span class="input__label">Woonplaats</span>
+          </label>
+          <br>
+
+          <label class="input">
+            <input  id="coverImage" required class="input__field" placeholder=" " />
+            <span class="input__label">Telefoonnummer</span>
+          </label>
+          <br>
+
+          <label class="input">
+            <input  id="rating" required class="input__field" placeholder=" " />
+            <span class="input__label">E-mailadres</span>
+          </label>
+          <br>
+
+
+
+
+          <button id="signInButton" type="submit" value="Add">Aanmelden</button>
+          <div class="popupContainer"></div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <a href="index.html">
+    <button>Naar de Admin</button>
+  </a>
+  <div class="grid-container"></div>
+  <script src="app.js"></script>
+  <script src="fetch.js"></script>
+</body>
+
+</html>

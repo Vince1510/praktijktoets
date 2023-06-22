@@ -1,0 +1,18 @@
+{
+  "zomers": [
+    {
+      "title": "Vince van Apeldoorn",
+      "year": "Abdijweide 13",
+      "img": "06-38457836",
+      "rating": "vincevanapeldoorn@gmail.com",
+      "id": 1
+    },
+    {
+      "title": "Frits met z'n lange achternaam",
+      "year": "thuis",
+      "img": "1234567890",
+      "rating": "frits@gmail.com",
+      "id": 2
+    }
+  ]
+}
