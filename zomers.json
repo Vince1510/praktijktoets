@@ -1,18 +1,39 @@
 {
   "zomers": [
     {
-      "title": "Vince van Apeldoorn",
-      "year": "Abdijweide 13",
-      "img": "06-38457836",
-      "rating": "vincevanapeldoorn@gmail.com",
+      "name": "Vince van Apeldoorn",
+      "place": "Abdijweide 13",
+      "phone": "0638457836",
+      "email": "vincevanapeldoorn@gmail.com",
       "id": 1
     },
     {
-      "title": "Frits met z'n lange achternaam",
-      "year": "thuis",
-      "img": "1234567890",
-      "rating": "frits@gmail.com",
+      "name": "Frits Jan",
+      "place": "thuis",
+      "phone": "12345",
+      "email": "fritsjan@gmail.com",
       "id": 2
+    },
+    {
+      "name": "Berend Bever",
+      "place": "Abdijweide 14",
+      "phone": "67890",
+      "email": "berendbever@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Jan Janssen",
+      "place": "Abdijweide 14",
+      "phone": "58978990",
+      "email": "janjanssen@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Bertje van Bladeren",
+      "place": "Abdijweide 16",
+      "phone": "7557886",
+      "email": "bertjevanbladeren@gmail.com",
+      "id": 5
     }
   ]
 }

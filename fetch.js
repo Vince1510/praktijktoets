@@ -11,11 +11,11 @@ fetch(`${zomersURL}`)
       out += `
       <div class="grid-item category${zomer.id}">
       <div id="single-zomer">
-      <h3>Voor- en achternaam: <br >${zomer.title}</h3>
-      <p> Telefoonnummer: ${zomer.img}</p>
+      <h3>Voor- en achternaam: <br >${zomer.name}</h3>
+      <p> Telefoonnummer: ${zomer.phone}</p>
 
-      <p>Woonplaats: ${zomer.year}</p>
-      <p>E-mailadres: ${zomer.rating}</p>
+      <p>Woonplaats: ${zomer.place}</p>
+      <p>E-mailadres: ${zomer.email}</p>
       </div>
     </div>
      `;

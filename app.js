@@ -12,10 +12,10 @@ fetch(`${zomerURL}`)
       allzomers = zomers;
       out += `
       <div id="single-zomer">
-        <h3>Voor- en achternaam: ${zomer.title}</h3>
-        <p>Telefoonnummer: ${zomer.img}</p>
-        <p>Woonplaats: ${zomer.year}</p>
-        <p>E-mailadres: ${zomer.rating}</p>
+        <h3>Voor- en achternaam: ${zomer.name}</h3>
+        <p>Telefoonnummer: ${zomer.phone}</p>
+        <p>Woonplaats: ${zomer.place}</p>
+        <p>E-mailadres: ${zomer.email}</p>
         <button data-id="${zomer.id}" id="edit-${zomer.id}" data-action="edit">Bewerken</button>
         <button data-id="${zomer.id}" id="delete-${zomer.id}" data-action="delete">Verwijderen</button>
       </div>`;
@@ -30,19 +30,19 @@ addButton.addEventListener("click", togglePopup);
 // Voeg een eventlistener toe aan het formulier om een film toe te voegen
 zomerForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const titleInput = zomerForm.querySelector("#title").value;
-  const yearInput = zomerForm.querySelector("#year").value;
-  const imageInput = zomerForm.querySelector("#coverImage").value;
-  const ratingInput = zomerForm.querySelector("#rating").value;
+  const nameInput = zomerForm.querySelector("#name").value;
+  const placeInput = zomerForm.querySelector("#place").value;
+  const imageInput = zomerForm.querySelector("#phone").value;
+  const emailInput = zomerForm.querySelector("#email").value;
   
   // Voeg een nieuwe film toe via een POST
   fetch(`${zomerURL}`, {
     method: "POST",
     body: JSON.stringify({
-      title: titleInput,
-      year: yearInput,
-      img: imageInput,
-      rating: ratingInput,
+      name: nameInput,
+      place: placeInput,
+      phone: imageInput,
+      email: emailInput,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -64,10 +64,10 @@ zomersContainer.addEventListener("click", (e) => {
     <div id='edit-zomer'>
       <div class="modal-content">
         <form id="zomer-form-edit">
-          <input required id="edit-title" value="${zomerData.title}">
-          <input required id="edit-year" value="${zomerData.year}">
-          <input required id="edit-coverImage" value="${zomerData.img}">
-          <input required id="edit-rating" value="${zomerData.rating}">
+          <input required id="edit-name" value="${zomerData.name}">
+          <input required id="edit-place" value="${zomerData.place}">
+          <input required id="edit-phone" value="${zomerData.phone}">
+          <input required id="edit-email" value="${zomerData.email}">
           <button type="submit" id="edit">Gegevens updaten</button>
         </form>
       </div>
@@ -76,19 +76,19 @@ zomersContainer.addEventListener("click", (e) => {
     // Voeg een eventlistener toe aan het bewerkingsformulier om de film te bewerken
     document.querySelector("#edit").addEventListener("click", (e) => {
       e.preventDefault();
-      const titleInput = document.querySelector("#edit-title").value;
-      const yearInput = document.querySelector("#edit-year").value;
-      const imageInput = document.querySelector("#edit-coverImage").value;
-      const ratingInput = document.querySelector("#edit-rating").value;
+      const nameInput = document.querySelector("#edit-name").value;
+      const placeInput = document.querySelector("#edit-place").value;
+      const imageInput = document.querySelector("#edit-phone").value;
+      const emailInput = document.querySelector("#edit-email").value;
       
       // Bewerk de film via een PATCH
       fetch(`${zomerURL}/${zomerData.id}`, {
         method: "PATCH",
         body: JSON.stringify({
-          title: titleInput,
-          year: yearInput,
-          img: imageInput,
-          rating: ratingInput,
+          name: nameInput,
+          place: placeInput,
+          phone: imageInput,
+          email: emailInput,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -115,32 +115,4 @@ function togglePopup() {
     popup.style.visibility === "visible" ? "hidden" : "visible";
 }
 
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Get the "Aanmelden" button element
-  var signInButton = document.getElementById('signIn');
 
-  // Add a click event listener to the button
-  signInButton.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Show the congratulations popup
-    showCongratulationsPopup();
-  });
-
-  // Function to show the congratulations popup
-  function showCongratulationsPopup() {
-    // Create the popup element
-    var popupElement = document.createElement('div');
-    popupElement.className = 'popup';
-    popupElement.textContent = 'Congratulations!';
-
-    // Append the popup element to the body
-    document.body.appendChild(popupElement);
-
-    // Remove the popup after a certain duration (e.g., 3 seconds)
-    setTimeout(function() {
-      popupElement.remove();
-    }, 3000);
-  }
-});
