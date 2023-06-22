@@ -3,7 +3,7 @@ const zomerURL = `http://localhost:3000/zomers`;
 const zomerForm = document.querySelector("#zomer-form");
 let allzomers = [];
 
-// Haal films op via een GET-verzoek naar de zomerURL
+// Haal items op via een GET-verzoek naar de zomerURL
 fetch(`${zomerURL}`)
   .then((response) => response.json())
   .then((zomers) => {
@@ -27,7 +27,7 @@ fetch(`${zomerURL}`)
 const addButton = document.querySelector("button");
 addButton.addEventListener("click", togglePopup);
 
-// Voeg een eventlistener toe aan het formulier om een film toe te voegen
+// Voeg een eventlistener toe aan het formulier om een item toe te voegen
 zomerForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const nameInput = zomerForm.querySelector("#name").value;
@@ -35,7 +35,7 @@ zomerForm.addEventListener("submit", (e) => {
   const imageInput = zomerForm.querySelector("#phone").value;
   const emailInput = zomerForm.querySelector("#email").value;
   
-  // Voeg een nieuwe film toe via een POST
+  // Voeg een nieuw item toe via een POST
   fetch(`${zomerURL}`, {
     method: "POST",
     body: JSON.stringify({
@@ -50,7 +50,7 @@ zomerForm.addEventListener("submit", (e) => {
   });
 });
 
-// Voeg een eventlistener toe aan het filmscontainer om bewerken en verwijderen mogelijk te maken
+// Voeg een eventlistener toe aan het zomerscontainer om bewerken en verwijderen mogelijk te maken
 zomersContainer.addEventListener("click", (e) => {
   e.preventDefault();
   const editButton = document.querySelector(`#edit-${e.target.dataset.id}`);
@@ -59,7 +59,7 @@ zomersContainer.addEventListener("click", (e) => {
   if (e.target.dataset.action === "edit") {
     const zomerData = allzomers.find((zomer) => zomer.id == e.target.dataset.id);
     
-    // Voeg een bewerkingsformulier toe voor de film
+    // Voeg een bewerkingsformulier toe voor het item
     e.target.parentElement.innerHTML += `
     <div id='edit-zomer'>
       <div class="modal-content">
@@ -73,7 +73,7 @@ zomersContainer.addEventListener("click", (e) => {
       </div>
     </div>`;
     
-    // Voeg een eventlistener toe aan het bewerkingsformulier om de film te bewerken
+    // Voeg een eventlistener toe aan het bewerkingsformulier om het item te bewerken
     document.querySelector("#edit").addEventListener("click", (e) => {
       e.preventDefault();
       const nameInput = document.querySelector("#edit-name").value;
@@ -81,7 +81,7 @@ zomersContainer.addEventListener("click", (e) => {
       const imageInput = document.querySelector("#edit-phone").value;
       const emailInput = document.querySelector("#edit-email").value;
       
-      // Bewerk de film via een PATCH
+      // Bewerk het item via een PATCH
       fetch(`${zomerURL}/${zomerData.id}`, {
         method: "PATCH",
         body: JSON.stringify({
@@ -96,7 +96,7 @@ zomersContainer.addEventListener("click", (e) => {
       });
     });
   } else if (e.target.dataset.action === "delete") {
-    // Verwijder de film via een DELETE-verzoek
+    // Verwijder item via een DELETE-verzoek
     document.querySelector(`#delete-${e.target.dataset.id}`).remove();
     
     fetch(`${zomerURL}/${e.target.dataset.id}`, {

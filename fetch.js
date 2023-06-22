@@ -1,7 +1,7 @@
 const zomerContainer = document.querySelector(".grid-container");
 const zomersURL = `  http://localhost:3000/zomers`;
 
-// Haal films op via een HTTP GET-verzoek naar de zomersURL
+// Haal items op via een HTTP GET-verzoek naar de zomersURL
 
 fetch(`${zomersURL}`)
   .then((response) => response.json())
