@@ -3,34 +3,49 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zomers</title>
+  <title>Document</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <button id="signinButton">Aanmelden</button>
   <div class="popup-container" id="popupContainer">
     <div class="popup-content">
-
       <section id="create-zomer">
         <form id="zomer-form">
-          <label for="title">Title</label>
-          <input type="text" id="title" required>
-          <label for="year">Year of Release</label>
-          <input type="text" id="year" required>
-          <label for="coverImage">Cover Image</label>
-          <input type="text" id="coverImage" required>
-          <label for="rating">Rating</label>
-          <input type="text" id="rating" required>
-          <button type="submit" value="Add">Add</button>
+          <h1>Aanmelden voor het grootste festival van Zeeland</h1>
+          <label class="input">
+            <input id="name" required class="input__field" placeholder=" " />
+            <span class="input__label">Voor- en achternaam</span>
+          </label>
+          <br>
+          <label class="input">
+            <input id="place" required class="input__field" placeholder=" " />
+            <span class="input__label">Woonplaats</span>
+          </label>
+          <br>
+          <label class="input">
+            <input id="phone" required class="input__field" placeholder=" " />
+            <span class="input__label">Telefoonnummer</span>
+          </label>
+          <br>
+          <label class="input">
+            <input id="email" required class="input__field" placeholder=" " />
+            <span class="input__label">E-mailadres</span>
+          </label>
+          <br>
+          <button id="addButton" type="submit" value="Add">Aanmelden</button>
         </form>
       </section>
     </div>
   </div>
-  <a href="overzicht.html"><button>Naar de overzichtspagina</button></a>
-  <section id="zomers-container"></section>
+  <a href="admin.html">
+    <button>Naar de Admin</button>
+  </a>
+  <div class="grid-container"></div>
   <script src="app.js"></script>
+  <script src="fetch.js"></script>
 </body>
 
 </html>
